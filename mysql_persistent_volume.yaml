@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: mysql1
+  name: authentication
 spec:
   accessModes:
     - ReadWriteOnce
@@ -9,13 +9,13 @@ spec:
   capacity:
     storage: 5Gi
   hostPath:
-    path: /mysql1
+    path: /authentication
 
 ---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: mysql2
+  name: usermanagement
 spec:
   accessModes:
     - ReadWriteOnce
@@ -23,4 +23,32 @@ spec:
   capacity:
     storage: 5Gi
   hostPath:
-    path: /mysql2
+    path: /usermanagement
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: resourcesmanagement
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: manual
+  capacity:
+    storage: 5Gi
+  hostPath:
+    path: /resourcesmanagement
+    
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: requestmanager
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: manual
+  capacity:
+    storage: 5Gi
+  hostPath:
+    path: /requestmanager
