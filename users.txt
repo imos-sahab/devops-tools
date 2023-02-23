@@ -1,2 +1,0 @@
-backend,backend,100
-frontend,frontend,100
